@@ -1,0 +1,336 @@
+#circle {
+    text-align: center;
+}
+
+svg {
+    margin: 0 auto;
+    & #large-circle {
+        stroke-dasharray: 100%;
+        stroke-dashoffset: 100%;
+        stroke-linecap: round;
+        transform-origin: center;
+        transform: rotate(19deg);
+    }
+    & #bg-large-circle {
+        stroke-dashoffset: 50%;
+        stroke-opacity: .3;
+    }
+    &:hover #large-circle {
+        animation: largeAnimation 1s cubic-bezier(0.36, 0, 0.3, -0.25);
+        animation-direction: alternate;
+    }
+    & #medium-circle {
+        stroke-dasharray: 200%;
+        stroke-dashoffset: 55%;
+        stroke-linecap: round;
+        transform-origin: center;
+        transform: rotate(270deg);
+    }
+    & #bg-medium-circle {
+        stroke-dashoffset: 50%;
+        stroke-opacity: .3;
+    }
+    &:hover #medium-circle {
+        animation: mediumAnimation 1.2s cubic-bezier(0.36, 0, 0.4, -0.2);
+        animation-direction: alternate;
+    }
+    & #small-circle {
+        stroke-dasharray: 100%;
+        stroke-dashoffset: 105%;
+        stroke-linecap: round;
+        transform-origin: center;
+        transform: rotate(235deg);
+    }
+    & #bg-small-circle {
+        stroke-dashoffset: 50%;
+        stroke-opacity: .3;
+    }
+    &:hover #small-circle {
+        animation: smallAnimation 1.1s cubic-bezier(0.36, 0, 0.35, -0.3);
+        animation-direction: alternate;
+    }
+    & .triad-logo {
+        width: 130px;
+        height: 130px;
+        background: white;
+        border-radius: 50%;
+        border: 12px solid #8BC34A;
+        text-align: center;
+        transform: translate(59%, 13%);
+        & img {
+            margin-top: 30px;
+            width: 60%;
+        }
+        &:hover {
+            width: 140px;
+            height: 140px;
+            transform: translate(58.5%, 12.5%);
+            transition: all 0.3s ease-in-out;
+            & img {
+                width: 65%;
+                transition: all 0.25s ease-in-out;
+            }
+        }
+    }
+    & .pros-logo {
+        width: 130px;
+        height: 130px;
+        background: white;
+        border-radius: 50%;
+        border: 12px solid #009688;
+        text-align: center;
+        transform: translate(15%, 25%);
+        & img {
+            margin-top: 42px;
+            width: 70%;
+        }
+        &:hover {
+            width: 140px;
+            height: 140px;
+            transform: translate(14.5%, 24.5%);
+            transition: all 0.3s ease-in-out;
+            & img {
+                margin-top: 46px;
+                width: 80%;
+                transition: all 0.25s ease-in-out;
+            }
+        }
+    }
+    & .brackets-logo {
+        width: 130px;
+        height: 130px;
+        background: white;
+        border-radius: 50%;
+        border: 12px solid #F7AB37;
+        text-align: center;
+        transform: translate(3%, 11%);
+        & img {
+            margin-top: 24px;
+            width: 40%;
+        }
+        &:hover {
+            width: 140px;
+            height: 140px;
+            transform: translate(2.5%, 10.5%);
+            transition: all 0.3s ease-in-out;
+            & img {
+                width: 45%;
+                transition: all 0.25s ease-in-out;
+            }
+        }
+    }
+}
+
+@media (min-width: 1300px) {
+    #circle svg {
+        width: 800px;
+        height: 800px;
+    }
+}
+
+@media (max-width: 1300px) {
+    #circle svg {
+        width: 80%;
+        height: 80%;
+    }
+}
+
+#center {
+    position: relative;
+    top: 150px;
+    left: -10px;
+    & .point {
+        position: absolute;
+        text-align: center;
+        width: 200px;
+        & p {
+            font-weight: 500;
+            font-size: 16px;
+            color: $grey;
+            b {
+                text-transform: uppercase;
+                font-size: 34px;
+                font-weight: 600;
+                line-height: 29px;
+                display: inline-block;
+                padding-top: 6px;
+            }
+            &.pros-title {
+                &.pros-title-active {
+                    color: $green-100;
+                    transition: color .25s ease-in-out;
+                }
+            }
+            &.triad-title {
+                &.triad-title-active {
+                    color: $green-200;
+                    transition: color .25s ease-in-out;
+                }
+            }
+            &.brackets-title {
+                &.brackets-title-active {
+                    color: $orange;
+                    transition: color .25s ease-in-out;
+
+                }
+            }
+            span {
+                font-size: 24px;
+                font-weight: 300;
+                line-height: 20px;
+                opacity: 0;
+                cursor: default;
+                transition: all .7s ease-in-out;
+                b {
+                    text-transform: uppercase;
+                    font-size: 34px;
+                    font-weight: 600;
+                    line-height: 29px;
+                    display: inline-block;
+                    padding-top: 6px;
+                }
+                &.triad-text {
+                    font-weight: 500;
+                    font-size: 16px;
+                    &.triad-active {
+                        opacity: 1;                      
+                    }
+                }
+                &.brackets-text {
+                    font-weight: 500;
+                    font-size: 16px;
+                    &.brackets-active {
+                        opacity: 1;
+                    }
+                };
+                &.pros-text {
+                    font-weight: 500;
+                    font-size: 16px;
+                    &.pros-active {
+                        opacity: 1;
+                    }
+                };
+                
+            }
+        }
+    }
+}
+
+.custom-padding {
+    padding: 200px 0;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    .col {
+        flex: 1 1 20%;
+        max-width: 20%;
+        flex-wrap: wrap;
+        margin: 10px 40px;
+        text-align: left;
+        p {
+            margin-bottom: 0.5rem;
+            @media (max-width: 380px) {
+                font-size: 14px;
+            }
+        }
+        p:nth-child(1) {
+            font-size: 24px;
+            line-height: 25px;
+            span.grey {
+                color: $grey;
+            }
+            span.green {
+                color: $green-200;
+            }
+            span.orange {
+                color: $orange;
+            }
+            b {
+                text-transform: uppercase;
+                font-size: 34px;
+                font-weight: 600;
+                line-height: 29px;
+                display: inline-block;
+                padding-top: 6px;
+                @media (max-width: 500px) {
+                    font-size: 24px;
+                }
+                @media (max-width: 380px) {
+                    font-size: 18px;
+                }
+            }
+            
+            @media (max-width: 500px) {
+                font-size: 20px;
+            }
+            @media (max-width: 380px) {
+                font-size: 16px;
+            }
+        }
+        @media (max-width: 1020px) {
+            max-width: 30%;
+        }
+        @media (max-width: 940px) {
+            max-width: 24%;
+        }
+        @media (max-width: 860px) {
+            max-width: 32%;
+            margin: 10px 0;
+        }
+        @media (max-width: 690px) {
+            max-width: 47%;
+        }
+    }
+    @media (min-width: 1300px) {
+        display: none;
+    }
+}
+
+@media (max-width:1300px) {
+    #center.text-respo {
+        padding: 15px;
+        position: sticky;
+        .point {
+            position: unset;
+            p {
+                margin-bottom: .5rem;
+            }
+        }
+    }
+    .custom-padding {
+        padding: 0!important;
+    }
+}
+
+@media (max-width: 1050px) {}
+
+// Animations
+@keyframes largeAnimation {
+    0% {
+        transform: rotate(19deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes mediumAnimation {
+    0% {
+        transform: rotate(270deg);
+    }
+    100% {
+        transform: rotate(630deg);
+    }
+}
+
+@keyframes smallAnimation {
+    0% {
+        transform: rotate(235deg);
+    }
+    100% {
+        transform: rotate(590deg);
+    }
+}
